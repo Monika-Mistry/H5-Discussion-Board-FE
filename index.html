@@ -11,13 +11,13 @@
 
 </head>
 
-<body>
+<body onload="getAllItems()">
 
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-between">
         <a class="navbar-brand" href="index.html">Discussion Board</a>
         <form class="form-inline">
-             <a class="nav-link mr-sm-2" href="Register.html"><em class="glyphicon glyphicon-user"></em> Register</a>
+            <a class="nav-link mr-sm-2" href="Register.html"><em class="glyphicon glyphicon-user"></em> Register</a>
             <a class="nav-link mr-sm-0" href="Login.html"><em class="glyphicon glyphicon-user mr-sm-0"></em>Login</a>
         </form>
     </nav>
@@ -49,6 +49,17 @@
             </div>
         </div>
         <p id="errormess"> </p>
+    </div>
+
+    <div id="results" class="container">
+        <table id="resultTable" class="table table-striped table-dark">
+            <thead>
+                <th scope="col">Username</th>
+                <th scope="col">Content</th>
+                <th scope="col">Delete</th>
+
+            </thead>
+        </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
