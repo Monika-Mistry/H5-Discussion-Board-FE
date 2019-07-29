@@ -7,6 +7,22 @@ const item = require("../models/itemModel.js");
 const validateLoginInput = require("../validation/itemValid.js");
 const emailhash = require("../validation/hash.js");
 
+
+router.get("/order", (req, res) => {
+  const errors = {};
+
+  item.find().sort({ $natural: -1 })
+    .then(items => {
+
+      if (!items) {
+        errors.noItems = "There are no items";
+        res.status(404).json(errors);
+      }
+      res.json(items);
+    })
+
+});
+
 router.get("/test", (req, res) => {
 
   res.json({
