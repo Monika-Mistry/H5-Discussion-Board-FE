@@ -72,6 +72,26 @@ router.put('/upItemName', (req, res) => {
 
 });
 
+router.delete("/deleteItem", (req, res) => {
+
+  let errors = {};
+
+  console.log(req.body);
+  console.log(req.body._id);
+
+  const id = req.body._id;
+
+  item.findById(id)
+    .then(item => {
+      item.deleteOne({ "_id": id })
+      res.status(200).send("successfully deleted item")
+
+    })
+
+
+    .catch(err => res.status(404).json({ notAnItem: "This is not an item" }))
+})
+
 router.delete('/delItemName', (req, res) => {
   var search = { username: req.body.username };
   item.findOneAndDelete(search)
