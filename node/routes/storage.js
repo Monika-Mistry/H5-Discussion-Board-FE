@@ -27,6 +27,24 @@ router.get("/getAllItems", (req, res) => {
     .catch(err => res.status(404).json({ noItems: "There are no items" }));
 });
 
+// @route GET item/order
+// @desc get all item in db in reverse chronological order
+// access Public
+router.get("/order", (req, res) => {
+    const errors = {};
+    
+    item.find().sort({$natural:-1})
+    .then(items => {
+
+        if (!items) {
+            errors.noItems = "There are no items";
+            res.status(404).json(errors);
+        }
+        res.json(items);
+    })
+
+});
+
 router.post('/addItem', (req, res) => {
 
   let vu = validateLoginInput(req.body);

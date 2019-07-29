@@ -1,4 +1,4 @@
-const path = "localhost:5000/";
+const path = "http://localhost:5000/";
 
 
 function makeRequest(method, url, body) {
