@@ -1,4 +1,4 @@
-const path = "localhost:5000/";
+const path = "http://localhost:5000/";
 
 
 function makeRequest(method, url, body) {
@@ -7,6 +7,7 @@ function makeRequest(method, url, body) {
         const req = new XMLHttpRequest
 
         req.open(method, url);
+        req.setRequestHeader("Content-Type", "application/json");
         req.send(body);
         req.onload = function () {
             const data = JSON.parse(req.responseText);
@@ -21,3 +22,4 @@ function makeRequest(method, url, body) {
         }
     })
 }
+
