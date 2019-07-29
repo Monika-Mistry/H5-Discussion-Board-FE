@@ -21,7 +21,9 @@ function getAllItems() {
             let detail = document.createElement('td');
             let detailButton = document.createElement('button');
             detailButton.id = value[i]._id;
-            detailButton.innerText = "Delete Member";
+            detailButton.innerText = "Delete";
+            detailButton.type = "button";
+            detailButton.className = "btn btn-dark myBtn";
             detailButton.onclick = detailButtonHandler;
             detail.innerHTML = detailButton;
             myRow.appendChild(detailButton);
