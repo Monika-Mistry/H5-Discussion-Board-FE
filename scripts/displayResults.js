@@ -1,6 +1,6 @@
 const headers = ["username", "content", "delete"];
 
-const displayResults = (results, headers) => {
+const displayResults = results => {
 
     let records = [];
     let resultObj = JSON.parse(results);
