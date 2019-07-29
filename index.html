@@ -32,6 +32,42 @@
     </nav>
 
     <p> Welcome to the discussion board </p>
+    <br>
+    <br>
+
+     <div class="container" id="logreg">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="container" id="register">
+
+                    Username:<br>
+                    <input type="text" name="username" id="username">
+                    <br> Password:<br>
+                    <input type="password" name="lastname" id="password">
+                    <br> Password Confirmation:<br>
+                    <input type="password" name="passconf" id="passcon">
+                    <br> email:<br>
+                    <input type="text" name="email" id="email">
+                    <br><br>
+                    <button class="button" type="submit" onclick="register()"> Register </button>
+
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="container" id="login">
+
+                    Username:<br>
+                    <input type="text" name="logname" id="logname">
+                    <br> Password:<br>
+                    <input type="password" name="logpass" id="logpass">
+                    <br>
+                    <br>
+                    <button class="button" type="submit" onclick="login()"> Login </button>
+                </div>
+            </div>
+        </div>
+        <p id="errorpass"> </p>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
