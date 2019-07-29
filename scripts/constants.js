@@ -5,7 +5,7 @@ function makeRequest(method, url, body) {
 
     return new Promise(function (resolve, reject) {
         const req = new XMLHttpRequest
-
+        
         req.open(method, url);
         req.setRequestHeader("Content-Type", "application/json");
         req.send(body);
